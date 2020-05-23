@@ -25,7 +25,7 @@ class Scraper
     index.css("div.student-card").each do |student|
       student_info = {
         :name =>
-        :location
+        :location =>
       }
     end
     students
