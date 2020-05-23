@@ -1,4 +1,4 @@
-
+require_relative "../lib/scraper.rb"
 
 class Student
 
