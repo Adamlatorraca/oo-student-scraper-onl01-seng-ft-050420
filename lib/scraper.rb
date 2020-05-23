@@ -36,9 +36,9 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     html = open(profile_url)
-    index = Nokogiri::HTML(html)
+    profile = Nokogiri::HTML(html)
     student_profile = {}
-    index.css("").each do |link|
+    profile.css("").each do |link|
       student_links
   end
 
