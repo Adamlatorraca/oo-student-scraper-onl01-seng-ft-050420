@@ -37,6 +37,8 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     html = open(profile_url)
     index = Nokogiri::HTML(html)
+    student_links = {}
+    binding.pry
   end
 
 end
