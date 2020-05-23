@@ -22,7 +22,7 @@ class Scraper
     html = open(index_url)
     scrape = Nokogiri::HTML(html)
     students = []
-    scrape.css("div.roster-cards-container").each do |name|
+    scrape.css("div.student-card").each do |name|
       name = scrape.css("h4.student-name").text
       students[name.to_sym] = {
         :location => scrape.css("p.student-location").text
