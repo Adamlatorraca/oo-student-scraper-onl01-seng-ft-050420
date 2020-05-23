@@ -10,6 +10,7 @@ class Scraper
     binding.pry
     doc.css("div.roster-cards-container").each do |student|
       name = student.css("h4").text
+    end
   end
 
   def self.scrape_profile_page(profile_url)
