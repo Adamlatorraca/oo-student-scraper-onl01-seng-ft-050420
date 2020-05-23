@@ -25,7 +25,7 @@ class Scraper
     scrape.css("div.roster-cards-container").each do |name|
       name = scrape.css("h4.student-name").text
       students[name.to_sym] = {
-        :location => student.css("p.student-location").text
+        :location => scrape.css("p.student-location").text
       }
     end
     students
