@@ -31,7 +31,6 @@ class Scraper
       }
       students << student_info
     end
-    binding.pry
     students
   end
 
