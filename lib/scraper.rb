@@ -9,7 +9,12 @@ class Scraper
     students = {}
     binding.pry
     doc.css("div.roster-cards-container").each do |student|
-      name = student.css("h4.student-name").text
+      students = {
+        :name => student.css("h4.studen-name").text
+        :location => student.css("p.student-location").text
+        :profile_url => student.css("a").attribute("href").value
+      }
+
     end
   end
 
