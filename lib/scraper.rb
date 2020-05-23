@@ -21,11 +21,9 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = open(index_url)
     index = Nokogiri::HTML(html)
-    scrape.css("div.student-card").each do |name|
-      name = scrape.css("h4.student-name").text
-      students[name.to_sym] = {
-        :location => scrape.css("p.student-location").text
-      }
+    students = []
+    index.css("div.student-card").each do |student|
+      studen
     end
     students
   end
