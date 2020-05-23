@@ -20,7 +20,9 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     html = open(index_url)
-    student_scraper = Nokogiri::HTML(html)
+    scrape = Nokogiri::HTML(html)
+    students = {}
+    scrape.css("div.roster-cards-container")
 
   end
 
