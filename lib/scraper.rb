@@ -3,21 +3,6 @@ require 'pry'
 
 class Scraper
 
-=begin  def self.scrape_index_page(index_url)
-    doc = Nokogiri::HTML(open(https://learn-co-curriculum.github.io/student-scraper-test-page/index.html)
-    students {}
-    doc.css("div.roster-body-wrapper").each do |student|
-      student = student.css("div.roster-cards-container").text
-      students[student] = {
-        :name => student.css("h4.studen-name").text
-        :location => student.css("p.student-location").text
-        :profile_url => student.css("a").attribute("href").text
-      }
-    end
-    students
-  end
-=end
-
   def self.scrape_index_page(index_url)
     html = open(index_url)
     index = Nokogiri::HTML(html)
@@ -38,8 +23,22 @@ class Scraper
     html = open(profile_url)
     profile = Nokogiri::HTML(html)
     student_profile = {}
-    profile.css("").each do |link|
-      student_links
+    profile.css("div.main-wrapper.profile .social-icon-container a").each do |social|
+      if social.attribute("href").value.include?("twitter")
+        student_profile[:twitter] = social.attribute("href").value
+      elsif social.attribute("href").value.include?("linkedin")
+        student_profile[:linkedin] = social.attribute("href").value
+      elsif social.attribute("href").value.include?("github")
+        student_profile[:github] = social.attribute("href").value
+      else
+        student_profile[:blog] = social.attribute("href").value
+      end
+    end
+
+    student_profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
+    student_profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
+
+    student_profile
   end
 
 end
