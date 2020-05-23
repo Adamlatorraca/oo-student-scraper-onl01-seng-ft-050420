@@ -19,7 +19,6 @@ class Scraper
 =end
 
   def self.scrape_index_page(index_url)
-    binding.pry
     html = open(index_url)
     doc = Nokogiri::HTML(html)
   end
