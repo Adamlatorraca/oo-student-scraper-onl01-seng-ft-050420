@@ -18,7 +18,7 @@ class Scraper
   end
 =end
 
-  def self.scrape_index_page
+  def self.scrape_index_page(index_url)
 
   end
 
