@@ -8,7 +8,7 @@ class Scraper
     binding.pry
     students {}
     doc.css("div.roster-cards-container").each do |student|
-      student = student.css(""div.roster-cards-container"").text
+      student = student.css("div.roster-cards-container).text
       students[student] = {
         :name => student.css("h4.studen-name").text
         :location => student.css("p.student-location").text
