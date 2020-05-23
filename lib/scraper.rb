@@ -27,7 +27,6 @@ class Scraper
       student_info = {
         :name => student.css("h4.student-name").text,
         :location => student.css("p.student-location").text
-        :profilr
       }
     end
     students
