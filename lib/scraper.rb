@@ -3,7 +3,7 @@ require 'pry'
 
 class Scraper
 
-  def self.scrape_index_page(index_url)
+=begin  def self.scrape_index_page(index_url)
     doc = Nokogiri::HTML(open(https://learn-co-curriculum.github.io/student-scraper-test-page/index.html)
     students {}
     doc.css("div.roster-body-wrapper").each do |student|
@@ -16,7 +16,7 @@ class Scraper
     end
     students
   end
-
+=end
   def self.scrape_profile_page(profile_url)
 
   end
