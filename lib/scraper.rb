@@ -26,7 +26,6 @@ class Scraper
       name = scrape.css("h4.student-name").text
       students[name.to_sym] = {
         :location => student.css("p.student-location").text
-        :profile_url => student.css("a").attribute("href").text
       }
     end
     students
